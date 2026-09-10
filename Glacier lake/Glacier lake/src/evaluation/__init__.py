@@ -1,0 +1,1 @@
+# Evaluation module for Glacial Lake Detection pipeline
