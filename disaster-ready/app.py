@@ -171,9 +171,13 @@ if page == "Dashboard":
     st.subheader("Live Sensor Feed")
     db, gen = db_session()
     try:
+        from src.services.geo import region_of
         sites = db.query(SensorSite).filter(SensorSite.is_active == True).all()
+        # Filter by selected region
+        if st.session_state.region != "All":
+            sites = [s for s in sites if s.region == st.session_state.region or region_of(s.latitude, s.longitude) == st.session_state.region]
         if not sites:
-            st.write("No active sensor sites found.")
+            st.write("No active sensor sites found for this region.")
         else:
             rows = []
             for site in sites:
@@ -197,7 +201,7 @@ if page == "Dashboard":
             df = pd.DataFrame(rows)
             st.dataframe(df, use_container_width=True, hide_index=True)
             total = db.query(SensorReading).count()
-            st.caption(f"📊 {total:,} real readings accumulated in the database from live public APIs.")
+            st.caption(f"📊 {total:,} real readings accumulated in the database from live public APIs. Showing region: {st.session_state.region}")
     finally:
         try: next(gen)
         except StopIteration: pass
@@ -273,7 +277,8 @@ elif page == "Map View":
         center = region_centers.get(st.session_state.region, [20.0, 0.0])
         zoom_start = 5 if st.session_state.region == "All" else 7
 
-        layers = st.multiselect("Layers", ["Live Sensors", "Scenario Areas", "Evacuation Routes", "Resource Depots"],
+        layers = st.multiselect("Layers", ["Live Sensors", "Scenario Areas", "Evacuation Routes", "Resource Depots",
+                                   "Tracked Assets", "Official Alerts", "India State Boundaries", "Sensor Heatmap"],
                                 default=["Live Sensors", "Scenario Areas", "Evacuation Routes", "Resource Depots"])
         m = folium.Map(location=center, zoom_start=zoom_start)
 
@@ -351,6 +356,72 @@ elif page == "Map View":
                         ).add_to(m)
                     except Exception:
                         continue
+
+        # India State Boundaries layer
+        if "India State Boundaries" in layers and st.session_state.region in ["India", "All"]:
+            try:
+                import json
+                from shapely.geometry import shape
+                with open('seed_data/india_states.geojson', 'r') as f:
+                    india_states = json.load(f)
+                folium.GeoJson(
+                    india_states,
+                    name="India State Boundaries",
+                    style_function=lambda x: {
+                        'fillColor': 'transparent',
+                        'color': '#333333',
+                        'weight': 1.5,
+                        'fillOpacity': 0.0
+                    },
+                    highlight_function=lambda x: {
+                        'fillColor': '#ffff00',
+                        'color': '#000000',
+                        'weight': 3,
+                        'fillOpacity': 0.3
+                    },
+                    tooltip=folium.GeoJsonTooltip(
+                        fields=['name', 'state_code'],
+                        aliases=['State: ', 'Code: '],
+                        style="background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;"
+                    )
+                ).add_to(m)
+                # Add centroid markers for each state
+                for feature in india_states['features']:
+                    geom = shape(feature['geometry'])
+                    if geom.is_valid:
+                        centroid = geom.centroid
+                        props = feature['properties']
+                        state_name = props.get('name', 'Unknown')
+                        state_code = props.get('state_code', '')
+                        popup_text = f"<b>{state_name}</b>"
+                        if state_code:
+                            popup_text += f"<br/>Code: {state_code}"
+                        folium.Marker(
+                            location=[centroid.y, centroid.x],
+                            popup=folium.Popup(popup_text, max_width=200),
+                            icon=folium.Icon(color='darkblue', icon='map-marker', prefix='fa'),
+                        ).add_to(m)
+            except Exception as e:
+                st.warning(f"Could not load India state boundaries: {e}")
+
+        # Heatmap layer for sensor readings
+        if "Sensor Heatmap" in layers:
+            try:
+                from folium.plugins import HeatMap
+                heat_data = []
+                for site in sites:
+                    if site.latitude and site.longitude:
+                        latest = (db.query(SensorReading)
+                                  .filter(SensorReading.sensor_site_id == site.id)
+                                  .order_by(SensorReading.timestamp.desc()).first())
+                        if latest:
+                            # Weight by hazard severity value
+                            weight = float(latest.value) if latest.value else 1.0
+                            heat_data.append([site.latitude, site.longitude, weight])
+                if heat_data:
+                    HeatMap(heat_data, radius=20, blur=15, max_zoom=10).add_to(m)
+            except Exception as e:
+                st.warning(f"Could not create heatmap: {e}")
 
         # New layers: Tracked Assets and Official Alerts
         if "Tracked Assets" in layers:

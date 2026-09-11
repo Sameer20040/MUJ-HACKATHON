@@ -2,6 +2,7 @@ import json
 import os
 from src.database import get_db
 from src.models import SensorSite, ResponsePlan, ResourcePosition, EvacuationRoute, HazardType
+from sqlalchemy import text
 
 
 def _seed_file(filename):
@@ -9,16 +10,60 @@ def _seed_file(filename):
 
 
 def load_sensor_sites():
-    """Load sensor sites from seed_data/sensor_sites.json if the table is empty."""
+    """Load sensor sites from seed_data/sensor_sites.json, adding new ones if they don't exist."""
     # Get a database session
     db_gen = get_db()
     db = next(db_gen)
     try:
-        # Check if we already have sensor sites
-        count = db.query(SensorSite).count()
-        if count > 0:
-            print(f"Sensor sites already populated with {count} records. Skipping seed.")
+        # Ensure region column exists (for existing databases)
+        try:
+            db.execute(text("ALTER TABLE sensor_sites ADD COLUMN region VARCHAR"))
+            db.commit()
+            print("Added 'region' column to sensor_sites table.")
+        except Exception:
+            # Column already exists or other error
+            db.rollback()
+
+        seed_file = _seed_file('sensor_sites.json')
+        print(f"Looking for seed file at: {seed_file}")
+        if not os.path.exists(seed_file):
+            print(f"Seed file not found: {seed_file}")
             return
+
+        with open(seed_file, 'r') as f:
+            sites_data = json.load(f)
+
+        # Insert each site if it doesn't already exist
+        new_count = 0
+        for site_data in sites_data:
+            # Check if site with this name already exists
+            existing = db.query(SensorSite).filter(SensorSite.name == site_data['name']).first()
+            if existing:
+                # Update region if missing
+                if existing.region is None and site_data.get('region'):
+                    existing.region = site_data['region']
+                    new_count += 1
+                continue
+
+            site = SensorSite(
+                name=site_data['name'],
+                hazard_type=site_data['hazard_type'],
+                location=site_data['location'],  # This is WKT string
+                upstream_url_template=site_data.get('upstream_url_template'),
+                source=site_data['source'],
+                is_active=site_data.get('is_active', True),
+                site_code=site_data.get('site_code'),
+                region=site_data.get('region')  # Region for filtering
+            )
+            db.add(site)
+            new_count += 1
+
+        db.commit()
+        print(f"Successfully seeded {new_count} new sensor sites (total: {db.query(SensorSite).count()}).")
+
+    except Exception as e:
+        print(f"Error seeding sensor sites: {e}")
+        db.rollback()
 
         seed_file = _seed_file('sensor_sites.json')
         print(f"Looking for seed file at: {seed_file}")
@@ -38,7 +83,8 @@ def load_sensor_sites():
                 upstream_url_template=site_data.get('upstream_url_template'),
                 source=site_data['source'],
                 is_active=site_data.get('is_active', True),
-                site_code=site_data.get('site_code')
+                site_code=site_data.get('site_code'),
+                region=site_data.get('region')  # Region for filtering
             )
             db.add(site)
 

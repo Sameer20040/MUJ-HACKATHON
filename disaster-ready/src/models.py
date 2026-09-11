@@ -59,6 +59,7 @@ class SensorSite(Base):
     source = Column(String, nullable=False)
     is_active = Column(Boolean, default=True)
     site_code = Column(String, nullable=True)
+    region = Column(String, nullable=True, index=True)  # Region for filtering (e.g., 'India', 'United States', 'Global')
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 

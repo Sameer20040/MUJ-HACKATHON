@@ -425,5 +425,203 @@
     "source": "openmeteo",
     "is_active": true,
     "region": "Global"
+  },
+  {
+    "name": "Hyderabad Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(78.4867 17.3850)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Bangalore Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(77.5946 12.9716)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Ahmedabad Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(72.5714 23.0225)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Pune Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(73.8567 18.5204)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Jaipur Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(75.7873 26.9124)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Lucknow Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(80.9462 26.8467)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Chandigarh Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(76.7794 30.7333)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Goa Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(73.8278 15.2993)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Hyderabad Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(78.4867 17.3850)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=17.3850&longitude=78.4867&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Bangalore Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(77.5946 12.9716)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=12.9716&longitude=77.5946&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Ahmedabad Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(72.5714 23.0225)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=23.0225&longitude=72.5714&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Pune Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(73.8567 18.5204)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=18.5204&longitude=73.8567&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Jaipur Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(75.7873 26.9124)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=26.9124&longitude=75.7873&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Lucknow Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(80.9462 26.8467)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=26.8467&longitude=80.9462&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Chandigarh Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(76.7794 30.7333)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=30.7333&longitude=76.7794&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Goa Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(73.8278 15.2993)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=15.2993&longitude=73.8278&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Hyderabad Flood Sensor",
+    "hazard_type": "flood",
+    "location": "POINT(78.4867 17.3850)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Bangalore Flood Sensor",
+    "hazard_type": "flood",
+    "location": "POINT(77.5946 12.9716)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Ahmedabad Flood Sensor",
+    "hazard_type": "flood",
+    "location": "POINT(72.5714 23.0225)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Godavari River at Rajahmundry",
+    "hazard_type": "flood",
+    "location": "POINT(81.8036 17.0005)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Krishna River at Vijayawada",
+    "hazard_type": "flood",
+    "location": "POINT(80.6480 16.5062)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Cauvery River at Srirangapatna",
+    "hazard_type": "flood",
+    "location": "POINT(76.7042 12.4188)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
   }
 ]
