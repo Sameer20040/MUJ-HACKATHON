@@ -1,0 +1,429 @@
+[
+  {
+    "name": "Los Angeles Seismic Station 1",
+    "hazard_type": "earthquake",
+    "location": "POINT(-118.2437 34.0522)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "United States"
+  },
+  {
+    "name": "San Francisco Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(-122.4194 37.7749)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "United States"
+  },
+  {
+    "name": "Seattle Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(-122.3321 47.6062)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "United States"
+  },
+  {
+    "name": "Portland Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(-122.6765 45.5152)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "United States"
+  },
+  {
+    "name": "Sacramento Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(-121.4944 38.5816)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "United States"
+  },
+  {
+    "name": "Los Angeles Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(-118.2437 34.0522)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=34.0522&longitude=-118.2437&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "United States"
+  },
+  {
+    "name": "San Francisco Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(-122.4194 37.7749)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=37.7749&longitude=-122.4194&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "United States"
+  },
+  {
+    "name": "Seattle Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(-122.3321 47.6062)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=47.6062&longitude=-122.3321&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "United States"
+  },
+  {
+    "name": "Portland Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(-122.6765 45.5152)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=45.5152&longitude=-122.6765&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "United States"
+  },
+  {
+    "name": "Sacramento Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(-121.4944 38.5816)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=38.5816&longitude=-121.4944&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "United States"
+  },
+  {
+    "name": "Los Angeles River at Sepulveda Dam",
+    "hazard_type": "flood",
+    "location": "POINT(-118.4676 34.1645)",
+    "upstream_url_template": "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=11101250&parameterCd=00065",
+    "source": "usgs_waterservice",
+    "is_active": true,
+    "site_code": "11101250",
+    "region": "United States"
+  },
+  {
+    "name": "San Francisco Bay at San Francisco",
+    "hazard_type": "flood",
+    "location": "POINT(-122.4656 37.8077)",
+    "upstream_url_template": "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=11455420&parameterCd=00065",
+    "source": "usgs_waterservice",
+    "is_active": true,
+    "site_code": "11455420",
+    "region": "United States"
+  },
+  {
+    "name": "Seattle Duwamish River",
+    "hazard_type": "flood",
+    "location": "POINT(-122.3488 47.5294)",
+    "upstream_url_template": "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=12113390&parameterCd=00065",
+    "source": "usgs_waterservice",
+    "is_active": true,
+    "site_code": "12113390",
+    "region": "United States"
+  },
+  {
+    "name": "Portland Willamette River",
+    "hazard_type": "flood",
+    "location": "POINT(-122.6734 45.5234)",
+    "upstream_url_template": "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=14211720&parameterCd=00065",
+    "source": "usgs_waterservice",
+    "is_active": true,
+    "site_code": "14211720",
+    "region": "United States"
+  },
+  {
+    "name": "Mumbai Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(72.8777 19.0760)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Chennai Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(80.2707 13.0827)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Kolkata Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(88.3639 22.5726)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Guwahati-Assam Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(91.7424 26.1445)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Dehradun/Uttarakhand Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(78.0322 30.3165)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Delhi Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(77.1025 28.7041)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Kochi-Kerala Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(76.2673 9.9312)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Bhuj-Gujarat Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(69.6693 23.2579)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Shillong Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(91.8938 25.5788)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Port Blair-Andaman Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(92.7295 11.6234)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Mumbai Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(72.8777 19.0760)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=19.0760&longitude=72.8777&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Chennai Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(80.2707 13.0827)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=13.0827&longitude=80.2707&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Kolkata Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(88.3639 22.5726)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=22.5726&longitude=88.3639&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Guwahati-Assam Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(91.7424 26.1445)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=26.1445&longitude=91.7424&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Dehradun/Uttarakhand Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(78.0322 30.3165)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=30.3165&longitude=78.0322&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Delhi Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(77.1025 28.7041)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=28.7041&longitude=77.1025&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Kochi-Kerala Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(76.2673 9.9312)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=9.9312&longitude=76.2673&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Bhuj-Gujarat Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(69.6693 23.2579)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=23.2579&longitude=69.6693&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Shillong Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(91.8938 25.5788)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=25.5788&longitude=91.8938&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Port Blair-Andaman Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(92.7295 11.6234)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=11.6234&longitude=92.7295&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Mumbai Flood Sensor",
+    "hazard_type": "flood",
+    "location": "POINT(72.8777 19.0760)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Chennai Flood Sensor",
+    "hazard_type": "flood",
+    "location": "POINT(80.2707 13.0827)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Kolkata Flood Sensor",
+    "hazard_type": "flood",
+    "location": "POINT(88.3639 22.5726)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Guwahati-Assam Flood Sensor",
+    "hazard_type": "flood",
+    "location": "POINT(91.7424 26.1445)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Delhi Flood Sensor",
+    "hazard_type": "flood",
+    "location": "POINT(77.1025 28.7041)",
+    "upstream_url_template": "",
+    "source": "openmeteo_flood",
+    "is_active": true,
+    "region": "India"
+  },
+  {
+    "name": "Tokyo Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(139.6917 35.6895)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "Global"
+  },
+  {
+    "name": "Kathmandu Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(85.3240 27.7172)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "Global"
+  },
+  {
+    "name": "Jakarta Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(106.8456 -6.2088)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "Global"
+  },
+  {
+    "name": "Manila Seismic Station",
+    "hazard_type": "earthquake",
+    "location": "POINT(120.9641 14.5995)",
+    "upstream_url_template": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&starttime=...&minmagnitude=2.5",
+    "source": "usgs_earthquake",
+    "is_active": true,
+    "region": "Global"
+  },
+  {
+    "name": "Tokyo Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(139.6917 35.6895)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "Global"
+  },
+  {
+    "name": "Kathmandu Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(85.3240 27.7172)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=27.7172&longitude=85.3240&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "Global"
+  },
+  {
+    "name": "Jakarta Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(106.8456 -6.2088)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=-6.2088&longitude=106.8456&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "Global"
+  },
+  {
+    "name": "Manila Weather Station",
+    "hazard_type": "rainfall",
+    "location": "POINT(120.9641 14.5995)",
+    "upstream_url_template": "https://api.open-meteo.com/v1/forecast?latitude=14.5995&longitude=120.9641&current=temperature_2m,precipitation,relative_humidity_2m,wind_speed_10m,wind_gusts_10m&timezone=UTC",
+    "source": "openmeteo",
+    "is_active": true,
+    "region": "Global"
+  }
+]

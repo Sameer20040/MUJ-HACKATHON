@@ -1,0 +1,50 @@
+{
+  "name": "Mumbai Monsoon Flood Response Plan",
+  "hazard_type": "flood",
+  "region_name": "India",
+  "version": 1,
+  "is_active": true,
+  "plan_data": {
+    "description": "Mumbai monsoon flood response covering Mumbai metropolitan area, Konkan coast, and Western Ghats catchment. Includes pre-positioned resources and evacuation routes for flash floods, river overflow, and coastal inundation.",
+    "covered_cascades": ["flood", "landslide", "water_contamination", "power_outage", "transport_disruption"],
+    "trigger_thresholds": {
+      "rainfall_mm_24h": 200,
+      "river_discharge_m3s": 1500,
+      "tide_level_m": 4.5,
+      "wind_gusts_kmh": 80
+    }
+  },
+  "resources": [
+    {"resource_type": "medical_supplies", "quantity": 300, "location": "POINT(72.8479 19.0176)", "capacity_per_hour": 150, "deployment_time_hours": 1.0},
+    {"resource_type": "food_water", "quantity": 5000, "location": "POINT(72.8777 19.0760)", "capacity_per_hour": 800, "deployment_time_hours": 1.5},
+    {"resource_type": "shelters", "quantity": 3, "location": "POINT(72.8777 19.0760)", "capacity_per_hour": 1000, "deployment_time_hours": 2.0},
+    {"resource_type": "rescue_teams", "quantity": 8, "location": "POINT(72.8500 19.1000)", "capacity_per_hour": 200, "deployment_time_hours": 0.5},
+    {"resource_type": "communication", "quantity": 20, "location": "POINT(72.8296 19.0176)", "capacity_per_hour": 50, "deployment_time_hours": 0.25}
+  ],
+  "routes": [
+    {
+      "route_name": "Mumbai Western Express Evac North",
+      "hazard_type": "flood",
+      "path": "LINESTRING(72.8200 19.0000, 72.8500 19.0500, 72.8800 19.1000)",
+      "capacity_per_hour": 2500,
+      "estimated_clearance_hours": 1.5,
+      "vulnerable_segments": [{"start_offset": 0.3, "end_offset": 0.5, "reason": "Mithi River crossing at flood stage"}]
+    },
+    {
+      "route_name": "Mumbai Eastern Express Evac East",
+      "hazard_type": "flood",
+      "path": "LINESTRING(72.9200 19.0200, 72.9500 19.0700, 72.9800 19.1200)",
+      "capacity_per_hour": 2500,
+      "estimated_clearance_hours": 1.5,
+      "vulnerable_segments": [{"start_offset": 0.2, "end_offset": 0.4, "reason": "Low-lying Thane Creek causeway"}]
+    },
+    {
+      "route_name": "Konkan Coast Inland Route",
+      "hazard_type": "flood",
+      "path": "LINESTRING(72.8777 19.0760, 72.9000 19.2000, 72.9500 19.3500)",
+      "capacity_per_hour": 1200,
+      "estimated_clearance_hours": 3.0,
+      "vulnerable_segments": [{"start_offset": 0.4, "end_offset": 0.6, "reason": "Landslide-prone Ghats section"}]
+    }
+  ]
+}

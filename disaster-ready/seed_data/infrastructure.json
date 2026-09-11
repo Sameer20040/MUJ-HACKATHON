@@ -1,0 +1,53 @@
+{
+  "hospitals": [
+    {"name": "LA General Medical Center", "location": "POINT(-118.2300 34.0430)", "capacity": 600},
+    {"name": "SF General Hospital", "location": "POINT(-122.4080 37.7560)", "capacity": 450},
+    {"name": "Seattle Harborview Medical", "location": "POINT(-122.3230 47.6040)", "capacity": 500},
+    {"name": "Portland OHSU Hospital", "location": "POINT(-122.6860 45.4980)", "capacity": 550},
+    {"name": "Mumbai General Hospital", "location": "POINT(72.8479 19.0176)", "capacity": 800},
+    {"name": "Chennai Apollo Hospital", "location": "POINT(80.2707 13.0827)", "capacity": 650},
+    {"name": "Guwahati Medical College Hospital", "location": "POINT(91.7424 26.1445)", "capacity": 400}
+  ],
+  "shelters": [
+    {"name": "LA Convention Center Shelter", "location": "POINT(-118.2680 34.0400)", "capacity": 2000},
+    {"name": "SF Masonic Auditorium Shelter", "location": "POINT(-122.4480 37.7860)", "capacity": 1200},
+    {"name": "Seattle Center Exhibition Hall", "location": "POINT(-122.3520 47.6220)", "capacity": 1500},
+    {"name": "Portland Veterans Memorial Coliseum", "location": "POINT(-122.6680 45.5310)", "capacity": 1300},
+    {"name": "Sacramento Memorial Auditorium", "location": "POINT(-121.4860 38.5830)", "capacity": 900},
+    {"name": "Mumbai Metropolitan Shelter", "location": "POINT(72.8777 19.0760)", "capacity": 3000},
+    {"name": "Chennai Community Shelter", "location": "POINT(80.2707 13.0827)", "capacity": 2000},
+    {"name": "Guwahati Relief Camp", "location": "POINT(91.7424 26.1445)", "capacity": 1500}
+  ],
+  "bridges": [
+    {"name": "Golden Gate Bridge", "location": "POINT(-122.4783 37.8199)", "type": "suspension"},
+    {"name": "Tacoma Narrows Bridge", "location": "POINT(-122.5530 47.2690)", "type": "suspension"},
+    {"name": "St. Johns Bridge (Portland)", "location": "POINT(-122.7190 45.5900)", "type": "suspension"},
+    {"name": "Bandra-Worli Sealink (Mumbai)", "location": "POINT(72.8296 19.0176)", "type": "cable-stayed"},
+    {"name": "Howrah Bridge (Kolkata)", "location": "POINT(88.3428 22.5859)", "type": "cantilever"}
+  ],
+  "dams": [
+    {"name": "Sepulveda Dam", "location": "POINT(-118.4676 34.1645)", "height_m": 17},
+    {"name": "Oroville Dam", "location": "POINT(-121.5490 39.5390)", "height_m": 235},
+    {"name": "Koyna Dam", "location": "POINT(73.7585 17.4037)", "height_m": 103},
+    {"name": "Bhakra Dam", "location": "POINT(76.4206 31.4167)", "height_m": 226}
+  ],
+  "power_nodes": [
+    {"name": "LA Power Substation A", "location": "POINT(-118.2500 34.0600)"},
+    {"name": "SF Power Substation B", "location": "POINT(-122.4300 37.7700)"},
+    {"name": "Seattle Power Substation C", "location": "POINT(-122.3400 47.6100)"},
+    {"name": "Portland Power Substation D", "location": "POINT(-122.6800 45.5200)"},
+    {"name": "Mumbai Power Substation North", "location": "POINT(72.8500 19.1000)"},
+    {"name": "Chennai Power Substation East", "location": "POINT(80.3100 13.1000)"},
+    {"name": "Guwahati Power Grid", "location": "POINT(91.7600 26.1500)"}
+  ],
+  "road_segments": [
+    {"name": "I-5 North (LA)", "path": "LINESTRING(-118.2437 34.0522, -118.2200 34.0900)", "capacity_per_hour": 4000},
+    {"name": "US-101 South (SF)", "path": "LINESTRING(-122.4194 37.7749, -122.4000 37.7400)", "capacity_per_hour": 3500},
+    {"name": "I-90 East (Seattle)", "path": "LINESTRING(-122.3321 47.6062, -122.3000 47.5900)", "capacity_per_hour": 3800},
+    {"name": "I-84 West (Portland)", "path": "LINESTRING(-122.6765 45.5152, -122.7000 45.5350)", "capacity_per_hour": 3000},
+    {"name": "I-80 East (Sacramento)", "path": "LINESTRING(-121.4944 38.5816, -121.4700 38.6000)", "capacity_per_hour": 3600},
+    {"name": "Western Express Highway (Mumbai)", "path": "LINESTRING(72.8200 19.0000, 72.8800 19.1000)", "capacity_per_hour": 2500},
+    {"name": "Eastern Express Highway (Mumbai)", "path": "LINESTRING(72.9200 19.0200, 72.9800 19.1200)", "capacity_per_hour": 2500},
+    {"name": "NH-27 Guwahati Bypass", "path": "LINESTRING(91.7000 26.1000, 91.7800 26.2000)", "capacity_per_hour": 1500}
+  ]
+}

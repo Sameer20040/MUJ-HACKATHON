@@ -1,0 +1,49 @@
+{
+  "name": "West Coast Multi-Hazard Response Plan",
+  "hazard_type": "flood",
+  "region_name": "US West Coast Corridor",
+  "version": 1,
+  "is_active": true,
+  "plan_data": {
+    "description": "Baseline response plan covering LA, SF, Seattle, Portland, Sacramento corridors with pre-positioned resources and evacuation routes.",
+    "covered_cascades": ["flood", "landslide", "power_grid", "water_contamination"],
+    "trigger_thresholds": {
+      "rainfall_mm_24h": 50,
+      "gage_height_ft": 12,
+      "wind_gusts_kmh": 110
+    }
+  },
+  "resources": [
+    {"resource_type": "medical_supplies", "quantity": 500, "location": "POINT(-118.2600 34.0500)", "capacity_per_hour": 200, "deployment_time_hours": 1.5},
+    {"resource_type": "food_water", "quantity": 2000, "location": "POINT(-122.4300 37.7800)", "capacity_per_hour": 400, "deployment_time_hours": 2.0},
+    {"resource_type": "shelters", "quantity": 4, "location": "POINT(-122.3500 47.6150)", "capacity_per_hour": 600, "deployment_time_hours": 3.0},
+    {"resource_type": "rescue_teams", "quantity": 6, "location": "POINT(-122.6700 45.5250)", "capacity_per_hour": 120, "deployment_time_hours": 1.0},
+    {"resource_type": "communication", "quantity": 30, "location": "POINT(-121.4900 38.5850)", "capacity_per_hour": 50, "deployment_time_hours": 0.5}
+  ],
+  "routes": [
+    {
+      "route_name": "LA Downtown Evac North (I-5)",
+      "hazard_type": "flood",
+      "path": "LINESTRING(-118.2437 34.0522, -118.2300 34.0900, -118.2200 34.1200)",
+      "capacity_per_hour": 4000,
+      "estimated_clearance_hours": 2.0,
+      "vulnerable_segments": [{"start_offset": 0.4, "end_offset": 0.6, "reason": "river crossing at flood stage"}]
+    },
+    {
+      "route_name": "SF Bay Evac East (Bay Bridge)",
+      "hazard_type": "flood",
+      "path": "LINESTRING(-122.4194 37.7749, -122.3800 37.7900, -122.3400 37.8050)",
+      "capacity_per_hour": 3000,
+      "estimated_clearance_hours": 2.5,
+      "vulnerable_segments": [{"start_offset": 0.2, "end_offset": 0.3, "reason": "low-lying causeway"}]
+    },
+    {
+      "route_name": "Seattle Evac East (I-90)",
+      "hazard_type": "flood",
+      "path": "LINESTRING(-122.3321 47.6062, -122.2900 47.5950, -122.2500 47.5850)",
+      "capacity_per_hour": 3500,
+      "estimated_clearance_hours": 2.0,
+      "vulnerable_segments": []
+    }
+  ]
+}
